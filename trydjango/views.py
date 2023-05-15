@@ -14,13 +14,14 @@ def home_view(request):
     name = 'Justin'
     number = random.randint(10, 1233123)
     article_obj = Article.objects.get(id=3)
+    article_queryset = Article.objects.all()
     
-
     # from the database??
-    # article-name
-    # article_content
+   
 
     context = {
+        "object_list": article_queryset,
+        "object": article_obj,
         "title" : article_obj.title,
         "id" : article_obj.id,
         "content": article_obj.content
